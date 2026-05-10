@@ -332,7 +332,7 @@ const projects = [
     status: 'Live',
     banner: 'linear-gradient(155deg,#0a0a0a,#1a1a1a)',
     techs: ['Next.js', 'Tailwind CSS', 'Vercel', 'Sanity CMS'],
-    link: 'https://ceyonefoundation.org',
+    link: 'https://ceyone.org',
     linkLabel: 'Live',
     github: null,
     bullets: [
