@@ -478,3 +478,29 @@
   .pd-topbar { padding: 0.75rem 1rem; }
   .pd-topbar-title { display: none; }
 }
+
+/* SEO screenshot */
+.pd-seo-screenshot {
+  margin-top: 2rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pd-seo-label {
+  padding: 0.6rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #666;
+  background: rgba(0,0,0,0.03);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  margin: 0;
+}
+
+.pd-seo-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

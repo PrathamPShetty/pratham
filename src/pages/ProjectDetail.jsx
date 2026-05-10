@@ -204,6 +204,12 @@ export default function ProjectDetail() {
                 </div>
               ))}
             </div>
+            {project.seoImage && (
+              <div className="pd-seo-screenshot">
+                <p className="pd-seo-label">Google Search Console — Search Performance</p>
+                <img src={project.seoImage} alt="Google Search Console performance report" className="pd-seo-img" />
+              </div>
+            )}
           </section>
 
           {/* Footer nav */}
