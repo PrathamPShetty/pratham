@@ -572,7 +572,7 @@ section { padding: 6rem 0; position: relative; }
   display: flex;
   flex-direction: column;
   transition: transform 0.3s, box-shadow 0.3s;
-  cursor: default;
+  cursor: pointer;
 }
 
 .project-card:hover {
@@ -675,6 +675,18 @@ section { padding: 6rem 0; position: relative; }
   color: rgba(0,0,0,0.2);
   font-size: 0.73rem;
 }
+
+.project-read-more {
+  font-size: 0.75rem;
+  font-family: 'Courier New', monospace;
+  color: #8a8a8a;
+  margin-top: auto;
+  padding-top: 0.5rem;
+  letter-spacing: 0.03em;
+  transition: color 0.2s;
+}
+
+.project-card:hover .project-read-more { color: #0a0a0a; }
 
 .project-badge {
   display: inline-flex;

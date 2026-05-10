@@ -1,0 +1,480 @@
+/* ── Project Detail Page ── */
+
+.pd-root {
+  min-height: 100vh;
+  background: #fff;
+  color: #0a0a0a;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Top bar */
+.pd-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 2rem;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  backdrop-filter: blur(16px);
+}
+
+.pd-back {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 3px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  cursor: pointer;
+  transition: background 0.15s;
+  letter-spacing: 0.02em;
+}
+
+.pd-back:hover { background: rgba(0,0,0,0.04); }
+
+.pd-topbar-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0a0a0a;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pd-topbar-links { display: flex; gap: 0.5rem; }
+
+.pd-ext-link {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 3px;
+  padding: 0.28rem 0.7rem;
+  transition: background 0.15s;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+}
+
+.pd-ext-link:hover { background: rgba(0,0,0,0.04); color: #0a0a0a; text-decoration: none; }
+
+/* Layout */
+.pd-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 6rem;
+  gap: 0;
+  align-items: start;
+}
+
+/* Sidebar */
+.pd-sidebar {
+  padding-top: 2.5rem;
+  padding-right: 2rem;
+}
+
+.pd-sidebar-sticky {
+  position: sticky;
+  top: 60px;
+}
+
+.pd-toc-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #8a8a8a;
+  margin-bottom: 0.6rem;
+  font-family: 'Courier New', monospace;
+}
+
+.pd-toc { display: flex; flex-direction: column; gap: 0.1rem; margin-bottom: 2rem; }
+
+.pd-toc-link {
+  font-size: 0.78rem;
+  color: #8a8a8a;
+  padding: 0.3rem 0;
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  border-left: 2px solid transparent;
+  padding-left: 0.6rem;
+  transition: color 0.15s, border-color 0.15s;
+  display: block;
+}
+
+.pd-toc-link:hover { color: #0a0a0a; border-left-color: #0a0a0a; text-decoration: none; }
+
+.pd-meta-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 4px;
+  background: #f7f7f7;
+}
+
+.pd-meta-row { display: flex; flex-direction: column; gap: 0.1rem; }
+
+.pd-meta-key {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8a8a8a;
+  font-family: 'Courier New', monospace;
+}
+
+.pd-meta-val {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+.pd-stack-pills { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.pd-pill {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-family: 'Courier New', monospace;
+  background: rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 3px;
+  padding: 0.18rem 0.5rem;
+  color: #525252;
+  letter-spacing: 0.03em;
+}
+
+/* Main */
+.pd-main { padding-top: 2.5rem; border-left: 1px solid rgba(0,0,0,0.07); padding-left: 3rem; }
+
+/* Hero banner */
+.pd-hero {
+  position: relative;
+  height: 180px;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem 2rem;
+  margin-bottom: 3rem;
+}
+
+.pd-hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.pd-hero-content { position: relative; z-index: 1; }
+
+.pd-hero-category {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 0.4rem;
+  font-family: 'Courier New', monospace;
+}
+
+.pd-hero-title {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.pd-hero-techs { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+.pd-hero-tag {
+  font-size: 0.68rem;
+  font-family: 'Courier New', monospace;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 3px;
+  padding: 0.18rem 0.55rem;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.04em;
+}
+
+/* Sections */
+.pd-section { margin-bottom: 0; padding: 3rem 0; }
+
+.pd-section-heading {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #8a8a8a;
+  margin-bottom: 1.25rem;
+  font-family: 'Courier New', monospace;
+}
+
+.pd-body {
+  font-size: 0.97rem;
+  color: #2a2a2a;
+  line-height: 1.9;
+  max-width: 680px;
+}
+
+.pd-divider {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.07);
+  margin: 0;
+}
+
+/* Architecture table */
+.pd-arch-table-wrap { margin-top: 1.5rem; overflow-x: auto; }
+
+.pd-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+
+.pd-table thead tr {
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.pd-table th {
+  text-align: left;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #8a8a8a;
+  font-family: 'Courier New', monospace;
+  padding: 0.6rem 1rem 0.6rem 0;
+  font-weight: 600;
+}
+
+.pd-table td {
+  padding: 0.75rem 1rem 0.75rem 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  vertical-align: top;
+  line-height: 1.65;
+}
+
+.pd-td-layer {
+  font-weight: 600;
+  font-size: 0.84rem;
+  color: #0a0a0a;
+  white-space: nowrap;
+  padding-right: 2rem !important;
+  font-family: 'Courier New', monospace;
+  width: 160px;
+}
+
+.pd-td-detail { color: #525252; font-size: 0.86rem; }
+
+/* Stack rationale */
+.pd-stack-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 0.5rem; }
+
+.pd-stack-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.1rem;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 4px;
+  background: #fafafa;
+}
+
+.pd-stack-tech {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #0a0a0a;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.02em;
+}
+
+.pd-stack-reason { font-size: 0.87rem; color: #525252; line-height: 1.75; margin: 0; }
+
+/* Features */
+.pd-features-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem; }
+
+.pd-feature-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.1rem;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 4px;
+}
+
+.pd-feature-index {
+  font-size: 0.72rem;
+  font-family: 'Courier New', monospace;
+  color: #8a8a8a;
+  font-weight: 700;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+  letter-spacing: 0.04em;
+}
+
+.pd-feature-title { font-size: 0.9rem; font-weight: 700; color: #0a0a0a; margin-bottom: 0.35rem; }
+.pd-feature-detail { font-size: 0.86rem; color: #525252; line-height: 1.75; margin: 0; }
+
+/* Challenges */
+.pd-challenges-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 0.5rem; }
+
+.pd-challenge-item {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.pd-challenge-problem {
+  padding: 1.1rem;
+  background: #fafafa;
+}
+
+.pd-challenge-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #8a8a8a;
+  padding: 1.1rem 0;
+}
+
+.pd-challenge-solution {
+  padding: 1.1rem;
+  background: #fff;
+}
+
+.pd-label {
+  display: block;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #8a8a8a;
+  font-family: 'Courier New', monospace;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.pd-challenge-problem p,
+.pd-challenge-solution p {
+  font-size: 0.86rem;
+  color: #2a2a2a;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Metrics */
+.pd-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.pd-metric-card {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 4px;
+  background: #fafafa;
+}
+
+.pd-metric-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+/* Footer nav */
+.pd-footer-nav {
+  padding: 3rem 0 1rem;
+}
+
+.pd-back-btn {
+  background: none;
+  border: 1px solid rgba(0,0,0,0.14);
+  border-radius: 3px;
+  padding: 0.6rem 1.25rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  cursor: pointer;
+  transition: background 0.15s;
+  letter-spacing: 0.02em;
+}
+
+.pd-back-btn:hover { background: rgba(0,0,0,0.04); }
+
+.pd-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  gap: 1rem;
+  font-size: 1rem;
+  color: #525252;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .pd-layout {
+    grid-template-columns: 1fr;
+    padding: 0 1rem 4rem;
+  }
+
+  .pd-sidebar {
+    padding-top: 1.5rem;
+    padding-right: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.07);
+    padding-bottom: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .pd-sidebar-sticky { position: static; }
+  .pd-toc { flex-direction: row; flex-wrap: wrap; gap: 0; }
+  .pd-toc-link { border-left: none; border-bottom: 2px solid transparent; padding-left: 0; padding-right: 0.9rem; }
+  .pd-toc-link:hover { border-bottom-color: #0a0a0a; border-left-color: transparent; }
+
+  .pd-main {
+    border-left: none;
+    padding-left: 0;
+    padding-top: 1.5rem;
+  }
+
+  .pd-stack-item { grid-template-columns: 1fr; gap: 0.5rem; }
+
+  .pd-challenge-item {
+    grid-template-columns: 1fr;
+  }
+
+  .pd-challenge-arrow { display: none; }
+  .pd-challenge-problem { border-bottom: 1px solid rgba(0,0,0,0.07); }
+
+  .pd-topbar { padding: 0.75rem 1rem; }
+  .pd-topbar-title { display: none; }
+}

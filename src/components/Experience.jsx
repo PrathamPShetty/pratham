@@ -49,7 +49,7 @@ export default function Experience() {
       <div className="container" style={{ position: 'relative' }}>
         <div className="section-head fade-up">
           <h2 className="section-title">Experience</h2>
-          <p className="section-subtitle">// where I've contributed professionally</p>
+          <p className="section-subtitle">// engineering roles and what I built</p>
         </div>
         <div className="timeline">
           {experiences.map((exp, i) => (

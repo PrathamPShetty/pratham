@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const ROLES = [
+  'Software Engineer',
+  'Backend Developer',
   'AI Engineer',
   'Full-Stack Developer',
   'Computer Vision Researcher',
@@ -54,9 +56,9 @@ export default function Hero() {
             </p>
 
             <p className="hero-desc">
-              Engineering student specializing in Artificial Intelligence and Full-Stack Development.
-              Building scalable, data-driven applications and integrating AI solutions — from
-              computer vision pipelines to production-ready web platforms.
+              Software Engineer with hands-on experience building production-grade systems across
+              backend APIs, mobile apps, and AI pipelines. I turn complex problems into clean,
+              maintainable code — shipping products used by thousands of real users.
             </p>
 
             <div className="hero-actions">
@@ -102,7 +104,7 @@ export default function Hero() {
               </div>
               <div className="avatar-info">
                 <p className="avatar-name">Pratham P Shetty</p>
-                <p className="avatar-title">AI Engineer &amp; Full-Stack Developer</p>
+                <p className="avatar-title">AI Engineer &amp; Software Engineer</p>
                 <p className="avatar-location">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="13" height="13">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>

@@ -48,7 +48,7 @@ export default function Skills() {
       <div className="container" style={{ position: 'relative' }}>
         <div className="section-head fade-up">
           <h2 className="section-title">Skills &amp; Technologies</h2>
-          <p className="section-subtitle">// tools and languages I work with daily</p>
+          <p className="section-subtitle">// languages, frameworks, and tools I ship with</p>
         </div>
         <div className="skills-grid">
           {skillGroups.map((g, i) => (
