@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-import ParticleCanvas from './ParticleCanvas';
-import AvatarSVG from './AvatarSVG';
 
 const ROLES = [
   'AI Engineer',
@@ -37,12 +35,6 @@ export default function Hero() {
 
   return (
     <section className="hero" id="about">
-      <ParticleCanvas />
-
-      {/* ambient orbs */}
-      <div className="bg-orb" style={{ width:500, height:500, background:'radial-gradient(circle,rgba(124,58,237,0.12),transparent)', top:-100, right:-100 }} />
-      <div className="bg-orb" style={{ width:300, height:300, background:'radial-gradient(circle,rgba(6,182,212,0.08),transparent)', bottom:50, left:-50 }} />
-
       <div className="container">
         <div className="hero-grid">
           <div>
@@ -68,11 +60,9 @@ export default function Hero() {
             </p>
 
             <div className="hero-actions">
-              <a href="#projects" className="btn btn-primary">
-                <span>🚀</span> View Projects
-              </a>
+              <a href="#projects" className="btn btn-primary">View Projects</a>
               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-outline">
-                <span>📄</span> Download Resume
+                Download Resume ↗
               </a>
             </div>
 
@@ -104,9 +94,22 @@ export default function Hero() {
           </div>
 
           <div className="hero-avatar">
-            <div className="avatar-ring">
-              <div className="avatar-ring-inner">
-                <AvatarSVG />
+            <div className="avatar-card">
+              <div className="avatar-ring">
+                <div className="avatar-ring-inner">
+                  <img src="/Pratham.jpg" alt="Pratham P Shetty" className="avatar-photo" />
+                </div>
+              </div>
+              <div className="avatar-info">
+                <p className="avatar-name">Pratham P Shetty</p>
+                <p className="avatar-title">AI Engineer &amp; Full-Stack Developer</p>
+                <p className="avatar-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" width="13" height="13">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                  </svg>
+                  Mangaluru, Karnataka
+                </p>
               </div>
             </div>
             <div className="avatar-glow" />

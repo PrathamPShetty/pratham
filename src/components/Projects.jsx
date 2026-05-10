@@ -3,8 +3,8 @@ import useScrollReveal from './useScrollReveal';
 const projects = [
   {
     name: 'SIT Mangalore App',
-    emoji: '📱',
-    banner: 'linear-gradient(135deg,#1e1b4b,#312e81,#4c1d95)',
+    category: 'Mobile App',
+    banner: 'linear-gradient(135deg,#0a0a0a,#1e1e1e)',
     techs: ['Flutter', 'Appwrite'],
     bullets: [
       'Mobile app for 1,500+ students & faculty — 1,000+ downloads.',
@@ -16,8 +16,8 @@ const projects = [
   },
   {
     name: 'Service Management App',
-    emoji: '🤖',
-    banner: 'linear-gradient(135deg,#1a1a2e,#4c1d95,#6d28d9)',
+    category: 'AI Platform',
+    banner: 'linear-gradient(150deg,#0d0d0d,#1a1a1a)',
     techs: ['FastAPI', 'Flutter', 'Ollama'],
     bullets: [
       'AI-enabled service platform with secure payment integration.',
@@ -29,8 +29,8 @@ const projects = [
   },
   {
     name: 'SIT Alumni Portal',
-    emoji: '🎓',
-    banner: 'linear-gradient(135deg,#0f172a,#164e63,#0e7490)',
+    category: 'Web Platform',
+    banner: 'linear-gradient(120deg,#0b0b0b,#1c1c1c)',
     techs: ['Next.js', 'Tailwind CSS'],
     bullets: [
       'Real-time alumni portal for 5,000+ graduates.',
@@ -42,8 +42,8 @@ const projects = [
   },
   {
     name: 'AI Resume Analyzer',
-    emoji: '🧠',
-    banner: 'linear-gradient(135deg,#1a1a2e,#831843,#9d174d)',
+    category: 'AI / NLP',
+    banner: 'linear-gradient(145deg,#0f0f0f,#1f1f1f)',
     techs: ['Python', 'NLP', 'FastAPI', 'Streamlit'],
     bullets: [
       'Automated resume screening, cutting processing time by 50%.',
@@ -55,8 +55,8 @@ const projects = [
   },
   {
     name: 'Tulunad Diaries',
-    emoji: '📰',
-    banner: 'linear-gradient(135deg,#1c1917,#78350f,#92400e)',
+    category: 'Web Platform',
+    banner: 'linear-gradient(160deg,#0c0c0c,#1b1b1b)',
     techs: ['Nest.js', 'React', 'Swagger'],
     bullets: [
       'Modern newspaper platform — 40% reach boost through SEO.',
@@ -67,8 +67,8 @@ const projects = [
   },
   {
     name: 'Emergency-Wave App',
-    emoji: '🚑',
-    banner: 'linear-gradient(135deg,#1a0000,#7f1d1d,#991b1b)',
+    category: 'Mobile App',
+    banner: 'linear-gradient(130deg,#0a0a0a,#191919)',
     techs: ['Flutter', 'Express.js'],
     bullets: [
       'Real-time ambulance management — 30% faster response.',
@@ -80,8 +80,8 @@ const projects = [
   },
   {
     name: 'Offline-First Store App',
-    emoji: '🏪',
-    banner: 'linear-gradient(135deg,#052e16,#14532d,#166534)',
+    category: 'Android App',
+    banner: 'linear-gradient(140deg,#0d0d0d,#1d1d1d)',
     techs: ['Jetpack Compose', 'Nest.js', 'PostgreSQL', 'SQLite'],
     bullets: [
       'Offline-first inventory & billing with local SQLite storage.',
@@ -93,8 +93,8 @@ const projects = [
   },
   {
     name: 'Ceyone Foundation',
-    emoji: '🌿',
-    banner: 'linear-gradient(135deg,#022c22,#065f46,#047857)',
+    category: 'Web Platform',
+    banner: 'linear-gradient(155deg,#0a0a0a,#1a1a1a)',
     techs: ['Next.js', 'Tailwind CSS'],
     bullets: [
       'NGO platform connecting donors & volunteers.',
@@ -106,8 +106,8 @@ const projects = [
   },
   {
     name: 'Raspberry Pi Logging System',
-    emoji: '🔒',
-    banner: 'linear-gradient(135deg,#1e1b4b,#3730a3,#1d4ed8)',
+    category: 'IoT / Web',
+    banner: 'linear-gradient(125deg,#0c0c0c,#1e1e1e)',
     techs: ['Python', 'Next.js'],
     bullets: [
       'Secure session management system for library access.',
@@ -119,8 +119,8 @@ const projects = [
   },
   {
     name: 'Sit-Slot System',
-    emoji: '📅',
-    banner: 'linear-gradient(135deg,#0f172a,#1e3a5f,#1e40af)',
+    category: 'Web App',
+    banner: 'linear-gradient(145deg,#0b0b0b,#1c1c1c)',
     techs: ['Django', 'HTML', 'CSS'],
     bullets: [
       'Booking system for 100+ faculty, reducing errors by 90%.',
@@ -136,8 +136,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="projects-section">
-      <div className="bg-orb" style={{ width:500, height:500, background:'radial-gradient(circle,rgba(6,182,212,0.06),transparent)', top:'10%', right:'-10%' }} />
-      <div className="container" style={{ position:'relative' }}>
+      <div className="container" style={{ position: 'relative' }}>
         <div className="section-head fade-up">
           <h2 className="section-title">Projects</h2>
           <p className="section-subtitle">Things I've built — from hackathon winners to production platforms</p>
@@ -147,19 +146,21 @@ export default function Projects() {
             <div key={i} className="glass project-card fade-up" style={{ transitionDelay: `${(i % 3) * 0.1}s` }}>
               <div className="project-banner" style={{ background: p.banner }}>
                 <div className="project-banner-grid" />
-                <span className="project-banner-icon">{p.emoji}</span>
+                <div className="project-banner-content">
+                  <span className="project-category-label">{p.category}</span>
+                  <h3 className="project-banner-name">{p.name}</h3>
+                </div>
               </div>
               <div className="project-body">
-                <div className="project-header">
-                  <span className="project-name">{p.name}</span>
+                <div className="project-body-top">
+                  <div className="project-techs">
+                    {p.techs.map(t => <span key={t} className="tag">{t}</span>)}
+                  </div>
                   {p.link && (
                     <a href={p.link} target="_blank" rel="noopener noreferrer" className="project-link">
                       {p.linkLabel} ↗
                     </a>
                   )}
-                </div>
-                <div className="project-techs">
-                  {p.techs.map(t => <span key={t} className="tag">{t}</span>)}
                 </div>
                 <ul className="project-bullets">
                   {p.bullets.map((b, j) => <li key={j}>{b}</li>)}
