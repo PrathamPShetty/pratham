@@ -6,7 +6,7 @@ const education = [
     degree: 'B.E. in Artificial Intelligence & Machine Learning',
     institution: 'Srinivas Institute of Technology, Mangalore',
     year: '2022 – 2026',
-    score: 'CGPA: 8.59',
+    score: 'CGPA: 8.6',
   },
   {
     icon: '◉',
